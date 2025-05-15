@@ -27,4 +27,4 @@ def webhook():
 def home():
     return "✅ 서버 작동 중"
 
-app.run()
+app.run(host="0.0.0.0", port=10000)
