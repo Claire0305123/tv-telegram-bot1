@@ -27,5 +27,4 @@ def webhook():
 def home():
     return "✅ 서버 작동 중"
 
-if __name__ == "__main__":
-    app.run()
+app.run()
