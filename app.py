@@ -13,8 +13,13 @@ def send_telegram_message(message):
     payload = {
         "chat_id": CHAT_ID,
         "text": message
+ }
+    headers = {
+        "Content-Type": "application/json; charset=utf-8"
     }
-    requests.post(url, json=payload)
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=headers)
+    urllib.request.urlopen(req)
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
